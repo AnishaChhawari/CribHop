@@ -1,0 +1,32 @@
+<%- layout("layouts/boilerplate")%>
+
+<body>
+    <h2 class ="col-6 offset-4">Login to CribHop</h2>
+    <div class="row mt-4">
+        <div class="col-6 offset-3 mt-3" >
+            <form action ="/login" method="POST" novalidate class="needs-validation">
+                <label for="username" class="form-label">Username:</label>
+                <input class= "form-control" 
+                    
+                    name = "username" 
+                    type="text" 
+                    id ="username" 
+                    required>
+                
+
+                
+
+                <label for="password" class="form-label">Password:</label>
+                <input class= "form-control" 
+
+                    name = "password" 
+                    type="password" 
+                    id ="password" 
+                    required>
+                
+                <button class="btn btn-dark mt-3">Login</button>
+            </form>
+        </div>
+    </div>
+
+</body>

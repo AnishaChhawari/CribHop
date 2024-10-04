@@ -1,0 +1,61 @@
+<%-layout("layouts/boilerplate")%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2" >
+            <br><br>
+            <h1><b>Edit Your Listing Here</b></h1>
+            <br><br>
+            <form method="POST" action="/listings/<%= editListing._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input class= "form-control" placeholder="<%=editListing.title%>" name = "listing[title]" type="text" value ="<%=editListing.title%>" required>
+                    <div class="invalid-feedback">Put a valid title.</div>
+                    <div class="valid-feedback">This looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class ="form-control" 
+                    name="listing[description]" required><%= editListing.description%></textarea>
+                    <div class="invalid-feedback">Put a valid title.</div>
+                    <div class="valid-feedback">This looks good!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Original   Image</label><br>
+                    
+                    <img src="<%=orgUrl%>" alt="Original Listing Image" style="width: 150px; height: auto;">
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload New Image</label>
+                    <input class="image form-control" name ="listing[image]" type="file" >
+                    
+                </div>
+                <div class="row">
+                    <div class="col-5 mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <input class="price form-control" placeholder="<%=editListing.price%>" name ="listing[price]" type="text" value ="<%=editListing.price%>" required>
+                        <div class="invalid-feedback">Put a valid title.</div>
+                        <div class="valid-feedback">This looks good!</div>
+                    </div>
+                    <div class="col-7 mb-3">
+                        <label for="location" class="form-label">Location</label>
+                        <input class="location form-control" placeholder ="<%=editListing.location%>" name ="listing[location]" type="text" value ="<%=editListing.location%>" required>
+                        <div class="invalid-feedback">Put a valid title.</div>
+                        <div class="valid-feedback">This looks good!</div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input class ="from-control" placeholder ="<%=editListing.country%>" name ="listing[country]" type="text" value =" <%=editListing.country%>" required>
+                    <div class="invalid-feedback">Put a valid title.</div>
+                    <div class="valid-feedback">This looks good!</div>
+                </div>
+                <br><br>
+                <button class="btn btn-dark edit-btn">Edit</button>
+                <br><br>
+        </div>
+    </div>
+    </form>
+    <script src="/js/script.js"></script>
+</body>
